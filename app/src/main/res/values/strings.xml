@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyCar</string>
+    <string-array name="park_time">
+        <item>30 minutes</item>
+        <item>60 minutes</item>
+        <item>90 minutes</item>
+        <item>2 hours</item>
+        <item>4 hours</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="remind_time">
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+        <item>None</item>
+    </string-array>
+</resources>
