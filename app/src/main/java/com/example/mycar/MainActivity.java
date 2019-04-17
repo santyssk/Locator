@@ -243,6 +243,11 @@ public class MainActivity extends AppCompatActivity {
                 if(countDownTimer!=null)
                     countDownTimer.cancel();
                 timer.setText("");
+                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(MainActivity.this, Remind.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+                if(alarmManager!=null)
+                    alarmManager.cancel(pendingIntent);
             }
         });
     }

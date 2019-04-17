@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyCar</string>
+    <string name="app_name">Locator</string>
     <string-array name="park_time">
         <item>30 minutes</item>
         <item>60 minutes</item>
