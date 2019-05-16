@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout.LayoutParams image_LayoutParams, text_LayoutParams;
     private Button park,navigate,refresh,clear;
     private SharedPreferences sharedPreferences;
-    private TextView temperature,humidity,timer;
+    private TextView temperature,humidity,timer,wind;
 
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -68,12 +68,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(WeatherResponse weatherResponse, Response response) {
                 Log.d("Weather Humidity", weatherResponse.getCurrently().getHumidity());
-                humidity.setText("Humidity\n" + round(Double.parseDouble(weatherResponse.getCurrently().getHumidity()) * 100) + "%");
+                humidity.setText(round(Double.parseDouble(weatherResponse.getCurrently().getHumidity()) * 100)+"");
                 Log.d("Weather Precipitation", weatherResponse.getCurrently().getPrecipProbability());
                 Log.d("Weather Visibility", weatherResponse.getCurrently().getVisibility());
                 Log.d("Weather Wind", weatherResponse.getCurrently().getWindSpeed());
+                wind.setText(weatherResponse.getCurrently().getWindSpeed() + " km/h");
                 Log.d("Weather Temp", String.valueOf(weatherResponse.getCurrently().getTemperature()));
-                temperature.setText("Temperature\n" + weatherResponse.getCurrently().getTemperature() + " C");
+                temperature.setText(weatherResponse.getCurrently().getTemperature() + " C");
                 Log.d("Weather Cloud", weatherResponse.getCurrently().getCloudClover());
                 Log.d("Weather Alert", String.valueOf(weatherResponse.getAlerts()));
                 Log.d("Weather Icon", weatherResponse.getCurrently().getIcon());
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                                 locationClass.writeAddress();
                                 Log.d("Location func", park + "\n" + address + "\n" + altitude);
                             } catch (Exception e) {
-                                locationClass.writeAddress("Location\n" + latitude + ',' + longitude + "\nAltitude\n" + altitude + "\nAddress not identifiable");
+                                locationClass.writeAddress("Location\n" + latitude + ',' + longitude + "\nAltitude\n" + altitude);
                             }
                             if (park) {
                                 Gson gson = new Gson();
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                             locationClass.writeAddress("Location not found");
                             humidity.setText("");
                             temperature.setText("");
+                            wind.setText("");
                         }
 
                     }
@@ -177,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         clear = findViewById(R.id.clear);
         temperature = findViewById(R.id.temperature);
         humidity = findViewById(R.id.humidity);
+        wind = findViewById(R.id.wind);
         timer = findViewById(R.id.timer);
 
         sharedPreferences = getSharedPreferences("Preference", MODE_PRIVATE);

@@ -45,20 +45,45 @@
         android:layout_marginTop="290dp"
         style="@style/Texttype"
         android:id="@+id/currentaddress"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="455dp"
+        android:src="@drawable/temperature"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/temperature"
         style="@style/Texttype"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="505dp"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="455dp"
+        android:src="@drawable/wind"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wind"
+        style="@style/Texttype"
+        android:layout_marginLeft="190dp"
         android:layout_marginTop="455dp"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="455dp"
+        android:src="@drawable/humidity"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/humidity"
         style="@style/Texttype"
-        android:layout_marginLeft="275dp"
-        android:layout_marginTop="455dp"/>
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="505dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
